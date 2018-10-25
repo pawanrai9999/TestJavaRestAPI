@@ -11,7 +11,7 @@ public class GreetingController{
     private static final String content = "Hello %s !";
     private final AtomicLong atomicLong = new AtomicLong();
 
-    @RequestMapping("/greeting/")
+    @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name){
         return new Greeting(atomicLong.incrementAndGet(), String.format(content, name));
     }
